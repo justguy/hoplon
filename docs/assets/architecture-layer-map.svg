@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1050" height="540" viewBox="0 0 1050 540" role="img" aria-labelledby="title desc">
+  <title id="title">Hoplon layer map</title>
+  <desc id="desc">Layer dependencies flow from launcher and transports into the engine facade, through operations and sessions, and down to adapters.</desc>
+  <defs><style>.bg{fill:#f8fafc}.box{fill:#fff;stroke:#334155;stroke-width:2;rx:10}.core{fill:#ecfeff;stroke:#0891b2}.edge{stroke:#475569;stroke-width:2.5;fill:none;marker-end:url(#arrow)}.schema{stroke-dasharray:7 6}.label{font:600 18px Arial,sans-serif;fill:#0f172a}.small{font:14px Arial,sans-serif;fill:#334155}</style><marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 Z" fill="#475569"/></marker></defs>
+  <rect class="bg" width="1050" height="540"/>
+  <rect class="box" x="50" y="70" width="170" height="76"/><text class="label" x="135" y="102" text-anchor="middle">launcher</text><text class="small" x="135" y="126" text-anchor="middle">workspace + CLI</text>
+  <rect class="box" x="50" y="205" width="170" height="76"/><text class="label" x="135" y="237" text-anchor="middle">transports</text><text class="small" x="135" y="261" text-anchor="middle">HTTP, MCP, gRPC</text>
+  <rect class="box" x="50" y="340" width="170" height="76"/><text class="label" x="135" y="372" text-anchor="middle">authorization</text><text class="small" x="135" y="396" text-anchor="middle">gates + policy</text>
+  <rect class="box core" x="360" y="205" width="190" height="76"/><text class="label" x="455" y="237" text-anchor="middle">engine facade</text><text class="small" x="455" y="261" text-anchor="middle">public typed API</text>
+  <rect class="box core" x="360" y="70" width="190" height="76"/><text class="label" x="455" y="102" text-anchor="middle">contracts</text><text class="small" x="455" y="126" text-anchor="middle">schemas + DTOs</text>
+  <rect class="box core" x="690" y="135" width="190" height="76"/><text class="label" x="785" y="167" text-anchor="middle">operations</text><text class="small" x="785" y="191" text-anchor="middle">deterministic logic</text>
+  <rect class="box core" x="690" y="275" width="190" height="76"/><text class="label" x="785" y="307" text-anchor="middle">sessions</text><text class="small" x="785" y="331" text-anchor="middle">safe edit state</text>
+  <rect class="box core" x="690" y="410" width="190" height="76"/><text class="label" x="785" y="442" text-anchor="middle">adapters</text><text class="small" x="785" y="466" text-anchor="middle">environment seams</text>
+  <path class="edge" d="M220 108 C285 108 300 243 360 243"/><path class="edge" d="M220 243 H360"/><path class="edge" d="M220 378 C270 378 280 243 360 243"/><path class="edge" d="M455 146 V205"/><path class="edge schema" d="M550 108 C620 108 620 173 690 173"/><path class="edge schema" d="M550 108 C625 108 620 313 690 313"/><path class="edge" d="M550 243 C620 243 620 173 690 173"/><path class="edge" d="M550 243 C620 243 620 313 690 313"/><path class="edge" d="M785 351 V410"/><path class="edge" d="M785 211 V410"/>
+</svg>

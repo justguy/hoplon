@@ -1,0 +1,32 @@
+import {
+  ApplyEditsSessionResponseDataSchema,
+  AuditSessionResponseDataSchema,
+  CloseSessionResponseDataSchema,
+  createSessionResponseSchema,
+  CreateSnapshotSessionResponseDataSchema,
+  DryRunSessionResponseDataSchema,
+  ExtractRollbackTemplateSessionResponseDataSchema,
+  GetRepairContextSessionResponseDataSchema,
+  GetSnapshotEvidenceSessionResponseDataSchema,
+  MarkEditedSessionResponseDataSchema,
+  PreflightSessionResponseDataSchema,
+  RevertSessionResponseDataSchema,
+  StageContentSessionResponseDataSchema,
+  StartSessionResponseDataSchema,
+  VerifyBehaviorSessionResponseDataSchema,
+} from '../../session/transportContracts.js';
+
+export const START_RESPONSE_SCHEMA = createSessionResponseSchema(StartSessionResponseDataSchema);
+export const PREFLIGHT_RESPONSE_SCHEMA = createSessionResponseSchema(PreflightSessionResponseDataSchema);
+export const CREATE_SNAPSHOT_RESPONSE_SCHEMA = createSessionResponseSchema(CreateSnapshotSessionResponseDataSchema);
+export const DRY_RUN_RESPONSE_SCHEMA = createSessionResponseSchema(DryRunSessionResponseDataSchema);
+export const APPLY_EDITS_RESPONSE_SCHEMA = createSessionResponseSchema(ApplyEditsSessionResponseDataSchema);
+export const STAGE_CONTENT_RESPONSE_SCHEMA = createSessionResponseSchema(StageContentSessionResponseDataSchema);
+export const MARK_EDITED_RESPONSE_SCHEMA = createSessionResponseSchema(MarkEditedSessionResponseDataSchema);
+export const AUDIT_RESPONSE_SCHEMA = createSessionResponseSchema(AuditSessionResponseDataSchema);
+export const REVERT_RESPONSE_SCHEMA = createSessionResponseSchema(RevertSessionResponseDataSchema);
+export const EXTRACT_ROLLBACK_TEMPLATE_RESPONSE_SCHEMA = createSessionResponseSchema(ExtractRollbackTemplateSessionResponseDataSchema);
+export const GET_REPAIR_CONTEXT_RESPONSE_SCHEMA = createSessionResponseSchema(GetRepairContextSessionResponseDataSchema);
+export const VERIFY_BEHAVIOR_RESPONSE_SCHEMA = createSessionResponseSchema(VerifyBehaviorSessionResponseDataSchema);
+export const CLOSE_RESPONSE_SCHEMA = createSessionResponseSchema(CloseSessionResponseDataSchema);
+export const GET_SNAPSHOT_EVIDENCE_RESPONSE_SCHEMA = createSessionResponseSchema(GetSnapshotEvidenceSessionResponseDataSchema);

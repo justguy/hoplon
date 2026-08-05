@@ -1,0 +1,36 @@
+{
+  "name": "@phalanx/hoplon-vector-store-sqlite-vec",
+  "version": "0.1.0",
+  "description": "Optional native performance-tier semantic index adapter package for Hoplon using node:sqlite and sqlite-vec.",
+  "license": "MIT",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "typecheck": "tsc --noEmit -p tsconfig.json",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "sqlite-vec": "0.1.9"
+  },
+  "peerDependencies": {
+    "@phalanx/hoplon": "^0.4.0"
+  },
+  "devDependencies": {
+    "@phalanx/hoplon": "file:../..",
+    "@types/node": "^22.0.0",
+    "typescript": "^5.7.0",
+    "vitest": "^4.1.10"
+  }
+}

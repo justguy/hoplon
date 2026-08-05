@@ -1,0 +1,30 @@
+{
+  "name": "@phalanx/hoplon-static-analysis-semgrep",
+  "version": "0.1.0",
+  "description": "Semgrep-backed StaticAnalysisAdapter plugin for @phalanx/hoplon. LGPL-2.1-or-later — must NOT be bundled into the MIT-licensed core.",
+  "license": "LGPL-2.1-or-later",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "scripts": {
+    "build": "tsc",
+    "typecheck": "tsc --noEmit",
+    "test": "npx vitest run tests/",
+    "test:unit": "npx vitest run tests/parseOutput.test.ts",
+    "test:integration": "RUN_INTEGRATION=1 npx vitest run tests/integration.test.ts"
+  },
+  "peerDependencies": {
+    "@phalanx/hoplon": "^0.4.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "typescript": "^5.7.0",
+    "vitest": "^4.1.10"
+  }
+}

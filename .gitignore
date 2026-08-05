@@ -1,0 +1,58 @@
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+build/
+*.tsbuildinfo
+
+# Caches
+.eslintcache
+.cache/
+.dependency-cruiser-cache/
+.parcel-cache/
+.turbo/
+
+# Test artifacts
+coverage/
+.vitest-cache/
+*.lcov
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# Logs
+*.log
+logs/
+npm-debug.log*
+yarn-debug.log*
+pnpm-debug.log*
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE / editor
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# SQLite (Hoplon snapshot stores — runtime artifacts, never committed)
+*.db
+*.db-shm
+*.db-wal
+.hoplon/*
+!.hoplon/
+!.hoplon/test-affinity.json
+!.hoplon/test-affinity.generated.json
+# Tree-sitter WASM grammars (fetched at postinstall, sha256-pinned in vendor/grammars/MANIFEST.json)
+src/**/*.wasm
+vendor/grammars/*.wasm
+
+# Temp / backup
+*.tmp
+*.bak

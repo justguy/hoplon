@@ -1,0 +1,42 @@
+{
+  "rbaa": {
+    "policy": {
+      "policyVersion": "rbaa_policy_bundle_2026_05_06",
+      "defaultLimits": {
+        "expiresInSeconds": 900,
+        "maxOperations": 5,
+        "maxFilesTouched": 3
+      },
+      "grantLimits": {
+        "expiresInSeconds": 300,
+        "maxOperations": 3,
+        "maxFilesTouched": 2
+      },
+      "projects": {
+        "hoplon": {
+          "default": {
+            "read": "allow",
+            "search": "allow",
+            "write": "allow",
+            "lock": "requires_escalation",
+            "snapshot": "requires_escalation"
+          }
+        },
+        "project-b": {
+          "default": {
+            "read": "allow",
+            "search": "allow",
+            "write": "requires_escalation",
+            "lock": "requires_escalation",
+            "snapshot": "requires_escalation"
+          }
+        }
+      },
+      "protectedBranches": ["main", "release/*"],
+      "sensitivePaths": ["secrets/**", ".env*"],
+      "quarantinePaths": ["quarantine/**"],
+      "hardDenyPaths": ["forbidden/**"],
+      "revokedGrantIds": ["grant-revoked"]
+    }
+  }
+}

@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="620" viewBox="0 0 1400 620" role="img" aria-labelledby="title desc">
+  <title id="title">Hoplon system model</title>
+  <desc id="desc">Agent and host enter through supported access surfaces, then the engine routes to contracts, operations, sessions, adapters, repository resources, evidence, and advisory sidecars.</desc>
+  <defs><style>.bg{fill:#f8fafc}.box{fill:#fff;stroke:#334155;stroke-width:2;rx:10}.surface{fill:#f1f5f9}.hoplon{fill:#ecfeff;stroke:#0891b2}.evidence{fill:#f0fdf4;stroke:#16a34a}.advisory{fill:#fefce8;stroke:#ca8a04}.label{font:600 18px Arial,sans-serif;fill:#0f172a}.small{font:14px Arial,sans-serif;fill:#334155}.arrow{stroke:#475569;stroke-width:2.4;fill:none;marker-end:url(#arrow)}.dash{stroke-dasharray:7 6}</style><marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 Z" fill="#475569"/></marker></defs>
+  <rect class="bg" width="1400" height="620"/>
+  <rect class="box" x="45" y="260" width="140" height="74"/><text class="label" x="115" y="292" text-anchor="middle">AI coding</text><text class="small" x="115" y="316" text-anchor="middle">agent</text>
+  <rect class="box" x="235" y="260" width="160" height="74"/><text class="label" x="315" y="292" text-anchor="middle">Host / IDE</text><text class="small" x="315" y="316" text-anchor="middle">orchestrator</text>
+  <rect class="box surface" x="455" y="135" width="340" height="315"/><text class="label" x="625" y="170" text-anchor="middle">Supported access surfaces</text>
+  <rect class="box" x="490" y="200" width="115" height="50"/><text class="small" x="548" y="231" text-anchor="middle">Local API</text>
+  <rect class="box" x="640" y="200" width="115" height="50"/><text class="small" x="698" y="231" text-anchor="middle">CLI</text>
+  <rect class="box" x="490" y="285" width="115" height="50"/><text class="small" x="548" y="316" text-anchor="middle">MCP</text>
+  <rect class="box" x="640" y="285" width="115" height="50"/><text class="small" x="698" y="316" text-anchor="middle">HTTP</text>
+  <rect class="box" x="565" y="370" width="115" height="50"/><text class="small" x="623" y="401" text-anchor="middle">gRPC</text>
+  <rect class="box hoplon" x="860" y="260" width="160" height="74"/><text class="label" x="940" y="292" text-anchor="middle">Engine</text><text class="small" x="940" y="316" text-anchor="middle">facade</text>
+  <rect class="box hoplon" x="1065" y="95" width="180" height="68"/><text class="label" x="1155" y="123" text-anchor="middle">Typed DTO</text><text class="small" x="1155" y="145" text-anchor="middle">contracts</text>
+  <rect class="box hoplon" x="1065" y="205" width="180" height="68"/><text class="label" x="1155" y="233" text-anchor="middle">Pure operation</text><text class="small" x="1155" y="255" text-anchor="middle">layer</text>
+  <rect class="box hoplon" x="1065" y="315" width="180" height="68"/><text class="label" x="1155" y="343" text-anchor="middle">Session state</text><text class="small" x="1155" y="365" text-anchor="middle">machine</text>
+  <rect class="box hoplon" x="1065" y="425" width="180" height="68"/><text class="label" x="1155" y="453" text-anchor="middle">Injected</text><text class="small" x="1155" y="475" text-anchor="middle">adapters</text>
+  <rect class="box" x="825" y="485" width="210" height="74"/><text class="label" x="930" y="517" text-anchor="middle">Workspace</text><text class="small" x="930" y="541" text-anchor="middle">git, SQLite, AST</text>
+  <rect class="box evidence" x="1275" y="205" width="105" height="178"/><text class="label" x="1328" y="270" text-anchor="middle">Evidence</text><text class="small" x="1328" y="296" text-anchor="middle">PASS/BLOCK</text><text class="small" x="1328" y="316" text-anchor="middle">review</text>
+  <rect class="box advisory" x="1275" y="425" width="105" height="68"/><text class="label" x="1328" y="453" text-anchor="middle">Advisory</text><text class="small" x="1328" y="475" text-anchor="middle">sidecars</text>
+  <path class="arrow" d="M185 297 H235"/><path class="arrow" d="M395 297 H455"/><path class="arrow" d="M795 297 H860"/><path class="arrow" d="M1020 297 H1065"/><path class="arrow" d="M1020 297 C1045 297 1040 129 1065 129"/><path class="arrow" d="M1020 297 C1045 297 1040 349 1065 349"/><path class="arrow" d="M1155 493 C1155 535 1080 522 1035 522"/><path class="arrow" d="M1245 239 H1275"/><path class="arrow" d="M1245 349 H1275"/><path class="arrow dash" d="M1328 425 V383"/><path class="arrow" d="M1275 294 C980 55 480 55 315 260"/>
+</svg>

@@ -1,0 +1,107 @@
+{
+  "name": "@phalanx/hoplon",
+  "version": "0.4.0",
+  "description": "Deterministic repository boundaries, supervised edits, snapshots, and structural audit for AI coding agents.",
+  "keywords": [
+    "ai-agents",
+    "coding-agents",
+    "mcp",
+    "repository-security",
+    "tree-sitter",
+    "structural-audit"
+  ],
+  "license": "MIT",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/justguy/hoplon.git"
+  },
+  "homepage": "https://github.com/justguy/hoplon#readme",
+  "bugs": {
+    "url": "https://github.com/justguy/hoplon/issues"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "private": false,
+  "files": [
+    "dist/",
+    "scripts/ensure-bin-executable.js",
+    "scripts/fetch-grammars.js",
+    "vendor/grammars/MANIFEST.json",
+    "README.md",
+    "LICENSE"
+  ],
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "bin": {
+    "hoplon": "dist/bin/hoplon.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "postbuild": "node scripts/ensure-bin-executable.js",
+    "prepare": "npm run build",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint .",
+    "test:arch": "npx vitest run tests/arch/",
+    "test:contracts": "npx vitest run tests/contracts/",
+    "test:util": "npx vitest run tests/util/",
+    "test:unit": "npx vitest run tests/unit/",
+    "test:proof": "npx vitest run tests/proof/phase1/",
+    "test:standalone": "npx vitest run tests/selfhost/t048-allowed-edit.proof.test.ts tests/selfhost/t049-violating-edit.proof.test.ts",
+    "example:bounded-edit": "npm run build --silent && node examples/bounded-edit.mjs",
+    "postinstall": "node scripts/fetch-grammars.js",
+    "fetch-grammars": "node scripts/fetch-grammars.js"
+  },
+  "dependencies": {
+    "@grpc/grpc-js": "^1.14.4",
+    "@grpc/proto-loader": "^0.8.1",
+    "@modelcontextprotocol/sdk": "1.30.0",
+    "@opentelemetry/api": "1.9.0",
+    "async-mutex": "^0.5.0",
+    "fast-json-stable-stringify": "^2.1.0",
+    "fastify": "^5.11.2",
+    "ioredis": "5.3.2",
+    "isomorphic-git": "^1.27.0",
+    "memfs": "^4.14.0",
+    "pg": "^8.13.3",
+    "picomatch": "^4.0.5",
+    "redlock": "5.0.0-beta.2",
+    "sql.js": "^1.14.1",
+    "tree-sitter-javascript": "^0.25.0",
+    "tree-sitter-typescript": "^0.23.2",
+    "typescript": "^5.7.0",
+    "web-tree-sitter": "^0.25.10",
+    "zod": "^3.23.0",
+    "zod-to-json-schema": "^3.23.0"
+  },
+  "overrides": {
+    "brace-expansion@<=1.1.17": "1.1.18",
+    "fast-uri@<=3.1.4": "3.1.5",
+    "immutable@<=4.3.8": "4.3.9",
+    "protobufjs": "7.6.5",
+    "tmp@<0.2.6": "0.2.7"
+  },
+  "devDependencies": {
+    "@types/fast-json-stable-stringify": "^2.0.0",
+    "@types/node": "^22.0.0",
+    "@types/sql.js": "^1.4.11",
+    "@typescript-eslint/eslint-plugin": "^8.66.0",
+    "@typescript-eslint/parser": "^8.66.0",
+    "dependency-cruiser": "^18.1.1",
+    "eslint": "^9.39.5",
+    "eslint-plugin-import": "^2.32.0",
+    "ioredis-mock": "^8.13.1",
+    "pg-mem": "^3.0.14",
+    "vitest": "^4.1.10"
+  }
+}

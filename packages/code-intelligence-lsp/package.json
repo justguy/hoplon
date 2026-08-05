@@ -1,0 +1,32 @@
+{
+  "name": "@phalanx/hoplon-code-intelligence-lsp",
+  "version": "0.1.0",
+  "description": "LSP-backed CodeIntelligenceAdapter plugin for @phalanx/hoplon — binds the LspProvider seam to a real LSP server via vscode-jsonrpc over stdio.",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "license": "MIT",
+  "scripts": {
+    "build": "tsc",
+    "typecheck": "tsc --noEmit",
+    "test": "npx vitest run tests/",
+    "test:integration": "RUN_INTEGRATION=1 npx vitest run tests/"
+  },
+  "peerDependencies": {
+    "@phalanx/hoplon": "^0.4.0"
+  },
+  "dependencies": {
+    "vscode-jsonrpc": "8.2.1"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "typescript": "^5.7.0",
+    "vitest": "^4.1.10"
+  }
+}

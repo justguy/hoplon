@@ -1,0 +1,16 @@
+// NEGATIVE FIXTURE — do NOT compile or import this file.
+// Extension is .ts.txt so tsc and vitest skip it.
+// Used by tests/arch/import-boundary.test.ts to prove the
+// boundary checker catches violations.
+
+import { somePipelineHelper } from '../src/pipeline/handlers';
+import { staffAgent } from '../src/agents/staffAgent';
+import { sqliteVectorRuntime } from 'sqlite-vec';
+import { InferenceSession } from 'onnxruntime-node';
+
+export function leakyHoplonCode(): void {
+  somePipelineHelper();
+  staffAgent();
+  sqliteVectorRuntime();
+  void InferenceSession;
+}

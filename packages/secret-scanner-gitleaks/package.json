@@ -1,0 +1,30 @@
+{
+  "name": "@phalanx/hoplon-secret-scanner-gitleaks",
+  "version": "0.1.0",
+  "description": "Gitleaks-backed GitleaksProvider for @phalanx/hoplon SecretScannerAdapter",
+  "license": "MIT",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "scripts": {
+    "build": "tsc",
+    "typecheck": "tsc --noEmit",
+    "test": "npx vitest run tests/",
+    "test:unit": "npx vitest run tests/parseOutput.test.ts",
+    "test:integration": "RUN_INTEGRATION=1 npx vitest run tests/integration.test.ts"
+  },
+  "peerDependencies": {
+    "@phalanx/hoplon": "^0.4.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "typescript": "^5.7.0",
+    "vitest": "^4.1.10"
+  }
+}

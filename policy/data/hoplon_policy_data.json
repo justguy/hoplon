@@ -1,0 +1,68 @@
+{
+  "policyVersion": "hoplon_policy_bundle_2026_05_03",
+  "defaultExpiresInSeconds": 900,
+  "grantExpiresInSeconds": 1800,
+  "projects": {
+    "project-a": {
+      "default": {
+        "read": "allow",
+        "search": "allow",
+        "write": "allow",
+        "lock": "allow",
+        "snapshot": "allow"
+      },
+      "token": {
+        "maxTtlSeconds": 900
+      }
+    },
+    "project-b": {
+      "default": {
+        "read": "allow",
+        "search": "allow",
+        "write": "requires_escalation",
+        "lock": "requires_escalation",
+        "snapshot": "requires_escalation"
+      },
+      "token": {
+        "maxTtlSeconds": 900
+      }
+    }
+  },
+  "branches": {
+    "project-b": {
+      "main": {
+        "write": "requires_human_approval",
+        "lock": "requires_human_approval",
+        "snapshot": "requires_human_approval"
+      },
+      "release/*": {
+        "write": "requires_human_approval",
+        "lock": "requires_human_approval",
+        "snapshot": "requires_human_approval"
+      },
+      "feature/*": {
+        "write": "requires_escalation",
+        "lock": "requires_escalation",
+        "snapshot": "requires_escalation"
+      }
+    }
+  },
+  "sensitivePaths": [
+    {
+      "pattern": "secrets/**",
+      "read": "requires_security_approval",
+      "write": "requires_security_approval",
+      "lock": "requires_security_approval",
+      "snapshot": "requires_security_approval"
+    },
+    {
+      "pattern": ".env*",
+      "read": "requires_security_approval",
+      "write": "requires_security_approval",
+      "lock": "requires_security_approval",
+      "snapshot": "requires_security_approval"
+    }
+  ],
+  "globalDenies": [],
+  "revokedGrantIds": []
+}

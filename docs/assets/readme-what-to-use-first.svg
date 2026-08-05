@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1260" height="500" viewBox="0 0 1260 500" role="img" aria-labelledby="title desc">
+  <title id="title">What to use first in Hoplon</title>
+  <desc id="desc">Flow from an AI coding agent through Hoplon-owned reads, supervised edits, deterministic gates, pass or block outcomes, and host-owned policy work.</desc>
+  <defs>
+    <style>
+      .bg{fill:#f8fafc}.box{fill:#fff;stroke:#334155;stroke-width:2;rx:10}.hoplon{fill:#ecfeff;stroke:#0891b2}.host{fill:#fff7ed;stroke:#ea580c}.decision{fill:#fefce8;stroke:#ca8a04}.label{font:600 18px Arial,sans-serif;fill:#0f172a}.small{font:14px Arial,sans-serif;fill:#334155}.arrow{stroke:#475569;stroke-width:2.5;fill:none;marker-end:url(#arrow)}.pass{stroke:#16a34a}.block{stroke:#dc2626}
+    </style>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 Z" fill="#475569"/></marker>
+  </defs>
+  <rect class="bg" x="0" y="0" width="1260" height="500"/>
+  <rect class="box" x="35" y="190" width="135" height="78"/><text class="label" x="103" y="222" text-anchor="middle">AI coding</text><text class="small" x="103" y="246" text-anchor="middle">agent</text>
+  <rect class="box hoplon" x="220" y="178" width="175" height="102"/><text class="label" x="307" y="216" text-anchor="middle">seeCodebase</text><text class="small" x="307" y="242" text-anchor="middle">structured reads</text><text class="small" x="307" y="262" text-anchor="middle">with provenance</text>
+  <rect class="box hoplon" x="445" y="178" width="205" height="102"/><text class="label" x="548" y="210" text-anchor="middle">edit session</text><text class="small" x="548" y="236" text-anchor="middle">createHoplonEditSession</text><text class="small" x="548" y="256" text-anchor="middle">and session_* tools</text>
+  <rect class="box hoplon" x="700" y="178" width="210" height="102"/><text class="label" x="805" y="206" text-anchor="middle">contract gate</text><text class="small" x="805" y="232" text-anchor="middle">preflight, snapshot</text><text class="small" x="805" y="252" text-anchor="middle">dryRun, auditDiff</text>
+  <path class="decision" d="M1010 160 L1125 229 L1010 298 L895 229 Z"/><text class="label" x="1010" y="223" text-anchor="middle">PASS</text><text class="small" x="1010" y="245" text-anchor="middle">or BLOCK?</text>
+  <rect class="box hoplon" x="935" y="35" width="180" height="82"/><text class="label" x="1025" y="68" text-anchor="middle">review</text><text class="small" x="1025" y="92" text-anchor="middle">snapshot evidence</text>
+  <rect class="box hoplon" x="935" y="345" width="180" height="90"/><text class="label" x="1025" y="378" text-anchor="middle">recovery</text><text class="small" x="1025" y="402" text-anchor="middle">revertUncontracted</text><text class="small" x="1025" y="422" text-anchor="middle">repair context</text>
+  <rect class="box host" x="1160" y="178" width="70" height="102"/><text class="label" x="1195" y="218" text-anchor="middle">host</text><text class="small" x="1195" y="244" text-anchor="middle">policy</text>
+  <rect class="box host" x="700" y="345" width="210" height="110"/><text class="label" x="805" y="378" text-anchor="middle">host-owned work</text><text class="small" x="805" y="404" text-anchor="middle">tests, retries, approval</text><text class="small" x="805" y="424" text-anchor="middle">shell, escalation</text><text class="small" x="805" y="444" text-anchor="middle">broad IDE refactors</text>
+  <path class="arrow" d="M170 229 H220"/><path class="arrow" d="M395 229 H445"/><path class="arrow" d="M650 229 H700"/><path class="arrow" d="M910 229 H895"/>
+  <path class="arrow pass" d="M1010 160 V117"/><path class="arrow block" d="M1010 298 V345"/><path class="arrow" d="M1115 76 C1175 76 1195 130 1195 178"/><path class="arrow" d="M1115 390 C1175 390 1195 330 1195 280"/><path class="arrow" d="M1160 229 H1125"/><path class="arrow" d="M1195 280 C1195 455 1040 455 910 400"/>
+</svg>

@@ -1,0 +1,43 @@
+{
+  "_comment": "Pinned WASM grammar manifest for Hoplon Phase 1 tree-sitter code intelligence. Files are staged at postinstall from npm packages in node_modules and verified by sha256. Do NOT commit the .wasm files — only this manifest is committed. Run `node scripts/fetch-grammars.js` to (re-)stage.",
+  "_sources": {
+    "tree-sitter.wasm": "web-tree-sitter@0.25.10 (npm package, bundled WASM runtime)",
+    "tree-sitter-javascript.wasm": "tree-sitter-javascript@0.25.0 (npm package, pre-built WASM grammar)",
+    "tree-sitter-typescript.wasm": "tree-sitter-typescript@0.23.2 (npm package, pre-built WASM grammar for TypeScript)",
+    "tree-sitter-tsx.wasm": "tree-sitter-typescript@0.23.2 (npm package, pre-built WASM grammar for TSX)"
+  },
+  "grammars": {
+    "tree-sitter.wasm": {
+      "url": "npm:web-tree-sitter@0.25.10/tree-sitter.wasm",
+      "sha256": "f38dcc4b43b818f9a0785bc1c6d5611a75ac4cdd428ff3f02757c34ca4e46d7f",
+      "size": 205488,
+      "sourcePackage": "web-tree-sitter",
+      "sourceVersion": "0.25.10",
+      "sourceFile": "tree-sitter.wasm"
+    },
+    "tree-sitter-javascript.wasm": {
+      "url": "npm:tree-sitter-javascript@0.25.0/tree-sitter-javascript.wasm",
+      "sha256": "5fb488d0cabb4775a594bab85682de5ad6ce83c0d6ac997a9f82dd084d571240",
+      "size": 411770,
+      "sourcePackage": "tree-sitter-javascript",
+      "sourceVersion": "0.25.0",
+      "sourceFile": "tree-sitter-javascript.wasm"
+    },
+    "tree-sitter-typescript.wasm": {
+      "url": "npm:tree-sitter-typescript@0.23.2/tree-sitter-typescript.wasm",
+      "sha256": "778025db5a8be0e70f8ccc3671e486dfeddd048c25d9e8a70c26de2e1bf6f97d",
+      "size": 1413849,
+      "sourcePackage": "tree-sitter-typescript",
+      "sourceVersion": "0.23.2",
+      "sourceFile": "tree-sitter-typescript.wasm"
+    },
+    "tree-sitter-tsx.wasm": {
+      "url": "npm:tree-sitter-typescript@0.23.2/tree-sitter-tsx.wasm",
+      "sha256": "79e5da75ea62855a0cd67177685f0164eac87d5f630b3cbe1e0a099751ad30f8",
+      "size": 1445638,
+      "sourcePackage": "tree-sitter-typescript",
+      "sourceVersion": "0.23.2",
+      "sourceFile": "tree-sitter-tsx.wasm"
+    }
+  }
+}
