@@ -4,8 +4,10 @@
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 [![Node.js 22+](https://img.shields.io/badge/node-%3E%3D22-339933.svg)](package.json)
 
-**Deterministic repository boundaries for AI coding agents and the humans who
-direct them.**
+**Agent-agnostic repository boundaries and focused context for AI coding agents
+and the humans who direct them.**
+
+**Give agents freedom without giving up control.**
 
 Hoplon sits between an agent and a repository. A human or host declares what
 the agent may inspect and modify; Hoplon supplies structured reads, supervised
@@ -13,8 +15,9 @@ edits, content-addressed snapshots, deterministic audits, recovery, and
 machine-readable evidence.
 
 Hoplon began as the repository boundary for Project Phalanx. It is intentionally
-standalone: any agent, MCP client, CI worker, or custom host can use the same
-contracts without adopting Phalanx.
+standalone and contains no model-specific decision logic. Any model can use it
+through an MCP-capable host; local TypeScript, CLI, HTTP, and gRPC surfaces let
+other hosts use the same contracts without adopting Phalanx.
 
 > **Developer preview:** the deterministic core and shipped transports are
 > usable today, but the public API is still on the `0.4.x` line. Expect additive
@@ -23,21 +26,32 @@ contracts without adopting Phalanx.
 ## Why Hoplon
 
 Agentic coding can waste context and reviewer time long before a test fails.
-Hoplon moves mechanical questions to the repository boundary:
+Hoplon moves mechanical questions to the repository boundary and gives teams:
 
-- What was the agent allowed to read or change?
-- Did the resulting diff stay within that contract?
-- Was a symbol, signature, import, path, or file boundary violated?
-- Can a failed attempt be reverted without contaminating the next one?
-- Which claims are deterministic, and which are only advisory?
+- **Less unnecessary context.** Structural templates, AST-bounded slices, and
+  exact targeted reads avoid treating every task as a full-file or full-repo
+  prompt. Estimated token telemetry makes that context reduction visible.
+- **Clear edit boundaries.** Writable manifests declare the files and symbols
+  an agent may change, and deterministic audits compare the result with the
+  contract.
+- **Recoverable attempts.** Content-addressed snapshots, rollback templates,
+  repair context, and revert operations keep failed work from becoming
+  ambiguous cleanup.
+- **Better human oversight.** Review payloads and proof bundles show what
+  changed, what passed, what blocked, and which evidence is advisory.
+- **Portable agent infrastructure.** The same boundary works across models and
+  orchestration stacks through MCP, TypeScript, CLI, HTTP, and gRPC.
 
-The answer is a typed result backed by snapshots and AST checks, not an agent
-summary that the host must trust.
+The result is typed evidence backed by snapshots and AST checks, not an agent
+summary that the host must trust. These guarantees apply to supported
+operations routed through Hoplon; Hoplon is a repository-boundary engine, not
+an OS sandbox for separately granted filesystem or shell access.
 
 ## What ships
 
 | Capability | Posture |
 |---|---|
+| Agent and model portability | Shipped with no model-provider binding; any model can use Hoplon through an MCP-capable host, with TypeScript, CLI, HTTP, and gRPC alternatives |
 | Structured reads and search | Shipped through `seeCodebase`, symbol search, tree-sitter queries, templates, and AST-bounded context packing |
 | Supervised non-binary edits | Shipped through ordered edit sessions and MCP/HTTP session tools |
 | Snapshots and deterministic audit | Shipped through `preflight`, `createSnapshot`, `dryRun`, `auditDiff`, and `revertUncontracted` |

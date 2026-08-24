@@ -1,10 +1,16 @@
 # Hoplon Vision
 
-Hoplon is a deterministic repository-boundary engine for AI coding agents.
+Hoplon is an agent-agnostic deterministic repository-boundary and context engine
+for AI coding agents.
 
 The premise is simple: probabilistic code generation needs deterministic
 repository physics. An agent can propose a change, but the repository boundary
 should be explicit, auditable, reversible, and mechanically enforced.
+
+Hoplon contains no model-specific decision logic. Any model can use it through
+an MCP-capable host, and the same contracts are available through local
+TypeScript, CLI, HTTP, and gRPC surfaces. Teams can change models or
+orchestration systems without replacing the repository boundary.
 
 ## The Problem
 
@@ -58,6 +64,11 @@ are injected. The engine core does not shell out or rely on ambient state.
 `dryRun`, `auditDiff`, `revertUncontracted`, sessions, and evidence. The host
 decides what those facts mean operationally.
 
+**Agent and model independence is architectural.** Model calls and prompting
+remain host-owned. Hoplon accepts typed repository operations and returns typed
+context, verdicts, and evidence through model-neutral engine and transport
+contracts.
+
 ## Capability Posture
 
 | Capability | Posture |
@@ -92,6 +103,11 @@ the repository boundary:
 Those are not model-quality judgments. They are mechanical facts that can be
 checked before a host burns more model time or asks a reviewer to inspect a
 polluted diff.
+
+Hoplon also reduces context overhead by returning structural templates,
+AST-bounded slices, and exact targeted reads instead of requiring complete files
+for every task. Token telemetry is explicitly estimated, giving hosts a useful
+measurement surface without presenting estimates as model-provider billing.
 
 ## The Category
 
